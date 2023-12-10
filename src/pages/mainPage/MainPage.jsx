@@ -6,7 +6,7 @@ import { Input } from '@mui/material';
 const MainPage = () => {
 
   const [searchValue, setSearchValue] = useState('')
-  const [items, setItems] = useState([]);
+   const [items, setItems] = useState([]);
 
   const searchTit = searchValue ? `title=*${searchValue}`:''
   // const searchArt = searchValue ? `artists=*${searchValue}`:''
@@ -18,14 +18,14 @@ const MainPage = () => {
         return res.json();
       })
       .then((arr) => {
-        console.log(arr);
+        // console.log(arr);
         setItems(arr);
       })
       .catch((error) => {
         console.error('Ошибка фетч запроса', error);
       });
   }, [searchValue]);
-console.log(searchValue);
+// console.log(searchValue);
   return (
     <div className={styles.search}>
       <Input 
